@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Palindrome Checker by Komal</title>
+	<style>
+		*{font-size:40px;font-family:"Ink Free";}
+		body{background-color:#d580ff;}
+		h1{background-color:black;color:white;width:60%;border-radius:30px;}
+		
+	</style>
+</head>
+<body>
+<center>
+	<h1>Palindrome Checker</h1>
+	<form onsubmit="check()">
+	<input type="text" placeholder="enter string" id = "str"/>
+	<br/><br/>
+	<input type="submit" value="Check" />
+	<h2 id="msg"></h2>
+	</form>
+	
+	<script>
+	function check()
+	{
+		event.preventDefault();
+		let str=document.getElementById("str");
+		let msg=document.getElementById("msg");
+
+		if(str.value.trim()=="")
+			{
+				alert("string cannot be empty");
+				msg.innerHTML="";
+				str.focus();
+				return;
+			}
+		let s =str.value;
+		let rs = s.split("").reverse().join("");
+
+		if(s==rs)
+			msg.innerHTML="yes it is palindrome";
+		else
+			msg.innerHTML="No it is palindrome";
+	}
+	</script>
+</center>
+</body>
+</html>
